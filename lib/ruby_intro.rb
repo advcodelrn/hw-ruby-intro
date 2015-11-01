@@ -3,15 +3,22 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  arr.reduce(0, :+)
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  arr.max(2).inject(0, :+)
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  l = arr.length
+  return false if l < 2
+  0.upto(l-2) do |i|
+    (i+1).upto(l-1) do |j|
+      return true if (arr[i] + arr[j]) == n
+    end
+  end
+  false
 end
 
 # Part 2
